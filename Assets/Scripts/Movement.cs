@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-
-    Rigidbody _rigidbody;
+    [SerializeField] private float ThrustingSpeed = 1000.0f;
+    private Rigidbody _rigidbody;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +25,8 @@ public class Movement : MonoBehaviour
         if (Input.GetKey(KeyCode.Space)) 
         {
             print("Pressed Space - Thrusting");
-            _rigidbody.AddRelativeForce(Vector3.up, ForceMode.Acceleration);
+            Vector3 ThrustingForce = ThrustingSpeed * Time.deltaTime * Vector3.up;
+            _rigidbody.AddRelativeForce(ThrustingForce, ForceMode.Acceleration);
         }
     }
 

@@ -5,10 +5,12 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
+
+    Rigidbody _rigidbody;
     // Start is called before the first frame update
     void Start()
     {
-        
+        _rigidbody = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -23,6 +25,7 @@ public class Movement : MonoBehaviour
         if (Input.GetKey(KeyCode.Space)) 
         {
             print("Pressed Space - Thrusting");
+            _rigidbody.AddRelativeForce(Vector3.up, ForceMode.Acceleration);
         }
     }
 

@@ -8,10 +8,12 @@ public class Movement : MonoBehaviour
     [SerializeField] private float ThrustingSpeed = 1000.0f;
     [SerializeField] private float RotationSpeed = 100f;
     private Rigidbody _rigidbody;
+    private AudioSource _audioSource;
     // Start is called before the first frame update
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();
+        _audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -28,6 +30,12 @@ public class Movement : MonoBehaviour
             print("Pressed Space - Thrusting");
             Vector3 ThrustingForce = ThrustingSpeed * Time.deltaTime * Vector3.up;
             _rigidbody.AddRelativeForce(ThrustingForce, ForceMode.Acceleration);
+            if (!_audioSource.isPlaying)
+            {
+                _audioSource.Play();
+            }
+        } else {
+            _audioSource.Stop();
         }
     }
 

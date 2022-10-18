@@ -18,6 +18,7 @@ public class CollisionHandler : MonoBehaviour
                 break;
             case FinishTag:
                 print("dbg: bump into finish!");
+                LoadNextLevel();
                 break;
             default:
                 print("dbg: bump into something else!");
@@ -30,5 +31,16 @@ public class CollisionHandler : MonoBehaviour
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentSceneIndex);
+    }
+
+    private void LoadNextLevel() 
+    {
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        int nextSceneIndex = currentSceneIndex + 1;
+        if (nextSceneIndex == SceneManager.sceneCountInBuildSettings) 
+        {
+            nextSceneIndex = 0;
+        }
+        SceneManager.LoadScene(nextSceneIndex);
     }
 }

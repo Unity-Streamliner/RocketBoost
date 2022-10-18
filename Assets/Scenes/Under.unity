@@ -447,6 +447,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 976392976115685504, guid: d13de3f6290a94c038f3e567a76d6cbc, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3cee5f6f1080f495489b51bae5f075c9, type: 2}
     - target: {fileID: 3036957320009841634, guid: d13de3f6290a94c038f3e567a76d6cbc, type: 3}
       propertyPath: m_Name
       value: Obstacle
@@ -456,12 +460,16 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7974970691593478533, guid: d13de3f6290a94c038f3e567a76d6cbc, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 14.34634
+      objectReference: {fileID: 0}
+    - target: {fileID: 7974970691593478533, guid: d13de3f6290a94c038f3e567a76d6cbc, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.14
       objectReference: {fileID: 0}
     - target: {fileID: 7974970691593478533, guid: d13de3f6290a94c038f3e567a76d6cbc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.83
+      value: 9.07
       objectReference: {fileID: 0}
     - target: {fileID: 7974970691593478533, guid: d13de3f6290a94c038f3e567a76d6cbc, type: 3}
       propertyPath: m_LocalPosition.z

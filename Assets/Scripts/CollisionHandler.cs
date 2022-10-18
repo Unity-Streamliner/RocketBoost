@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class CollisionHandler : MonoBehaviour
 {
+    [SerializeField] float levelLoadDelay = 2f;
 
     public const string FriendlyTag = "Friendly";
     public const string FinishTag = "Finish";
@@ -18,13 +19,29 @@ public class CollisionHandler : MonoBehaviour
                 break;
             case FinishTag:
                 print("dbg: bump into finish!");
-                LoadNextLevel();
+                StartSuccessSequence();
                 break;
             default:
                 print("dbg: bump into something else!");
-                ReloadLevel();
+                StartCrashSequence();
                 break;
         }
+    }
+
+    void StartCrashSequence()
+    {
+        // TODO: add SFX  upon crash
+        // TODO: add particle effect upon crash
+        GetComponent<Movement>().enabled = false;
+        Invoke(nameof(ReloadLevel), levelLoadDelay);
+    }
+
+    void StartSuccessSequence() 
+    {
+        // TODO: add SFX  upon level complete
+        // TODO: add particle effect upon level complete
+        GetComponent<Movement>().enabled = false;
+        Invoke(nameof(LoadNextLevel), levelLoadDelay);
     }
 
     private void ReloadLevel() 

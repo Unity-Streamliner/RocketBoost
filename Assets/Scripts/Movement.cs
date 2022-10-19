@@ -15,7 +15,6 @@ public class Movement : MonoBehaviour
     private AudioSource _audioSource;
     
     // STATE - private instance (member) variables
-    bool _isAlive;
 
 
     void Start()

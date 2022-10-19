@@ -495,26 +495,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 721852951, guid: e92c4d654bade4164957c4dee60a376b, type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 721852958, guid: e92c4d654bade4164957c4dee60a376b, type: 3}
-      propertyPath: crashAudio
-      value: 
-      objectReference: {fileID: 8300000, guid: 4c946d079f5ff4471a0a3721cf12e900, type: 3}
-    - target: {fileID: 721852958, guid: e92c4d654bade4164957c4dee60a376b, type: 3}
-      propertyPath: successAudio
-      value: 
-      objectReference: {fileID: 8300000, guid: 8295624ef7e054795b91f2b925e176ef, type: 3}
-    - target: {fileID: 2088014608, guid: e92c4d654bade4164957c4dee60a376b, type: 3}
-      propertyPath: mainEngine
-      value: 
-      objectReference: {fileID: 8300000, guid: 6e2108a65e1014121bc6376f1113e800, type: 3}
-    - target: {fileID: 2088014608, guid: e92c4d654bade4164957c4dee60a376b, type: 3}
-      propertyPath: mainEngineAudio
-      value: 
-      objectReference: {fileID: 8300000, guid: 6e2108a65e1014121bc6376f1113e800, type: 3}
     - target: {fileID: 1550745237157599859, guid: e92c4d654bade4164957c4dee60a376b, type: 3}
       propertyPath: m_RootOrder
       value: 5

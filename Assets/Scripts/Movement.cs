@@ -9,6 +9,9 @@ public class Movement : MonoBehaviour
     [SerializeField] private float ThrustingSpeed = 1000.0f;
     [SerializeField] private float RotationSpeed = 100f;
     [SerializeField] private AudioClip mainEngineAudio;
+    [SerializeField] private ParticleSystem mainBoosterParticles;
+    [SerializeField] private ParticleSystem leftBoosterParticles;
+    [SerializeField] private ParticleSystem rightBoosterParticles;
 
     // CACHE - e.g. refereces for readability or speed
     private Rigidbody _rigidbody;
@@ -34,6 +37,10 @@ public class Movement : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Space)) 
         {
+            // Add VFX 
+            if (!mainBoosterParticles.isPlaying) {
+                mainBoosterParticles.Play();
+            }
             print("Pressed Space - Thrusting");
             Vector3 ThrustingForce = ThrustingSpeed * Time.deltaTime * Vector3.up;
             _rigidbody.AddRelativeForce(ThrustingForce, ForceMode.Acceleration);
@@ -42,6 +49,7 @@ public class Movement : MonoBehaviour
                 _audioSource.PlayOneShot(mainEngineAudio);
             }
         } else {
+            mainBoosterParticles.Stop();
             _audioSource.Stop();
         }
     }
@@ -51,9 +59,18 @@ public class Movement : MonoBehaviour
         if (Input.GetKey(KeyCode.A)) 
         {
             ApplyRotation(RotationSpeed);
+            if (!leftBoosterParticles.isPlaying) {
+                leftBoosterParticles.Play();
+            }
         } else if (Input.GetKey(KeyCode.D))
         {
             ApplyRotation(-RotationSpeed);
+            if (!rightBoosterParticles.isPlaying) {
+                rightBoosterParticles.Play();
+            }
+        } else {
+            leftBoosterParticles.Stop();
+            rightBoosterParticles.Stop();
         }
     }
 
